@@ -62,6 +62,7 @@ public class HomeActivity extends AppCompatActivity {
                 .setNumOfBounces(15)
                 .setDuration(60000)
                 .animate();
+
     }
 
     public void SlideToAbove() {
