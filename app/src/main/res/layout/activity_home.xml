@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".Activity.HomeActivity">
+
+    <ImageView
+        android:id="@+id/image_view_1"
+        android:layout_width="@dimen/_50sdp"
+        android:layout_height="@dimen/_50sdp"
+        android:layout_margin="@dimen/_10sdp"
+        android:src="@drawable/gift" />
+
+    <ImageView
+        android:id="@+id/image_view_2"
+        android:layout_width="@dimen/_50sdp"
+        android:layout_height="@dimen/_50sdp"
+        android:layout_margin="@dimen/_10sdp"
+        android:src="@drawable/wish" />
+
+    <ImageView
+        android:id="@+id/image_view_3"
+        android:layout_width="@dimen/_50sdp"
+        android:layout_height="@dimen/_50sdp"
+        android:layout_margin="@dimen/_10sdp"
+        android:src="@drawable/memories" />
+
+    <!--
+        <com.cleveroad.audiovisualization.GLAudioVisualizationView xmlns:android="http://schemas.android.com/apk/res/android"
+            xmlns:app="http://schemas.android.com/apk/res-auto"
+            android:id="@+id/visualizer_view"
+            android:layout_width="match_parent"
+            android:layout_height="120dp"
+            app:av_backgroundColor="@color/av_color_bg"
+            app:av_bubblesPerLayer="16"
+            app:av_bubblesRandomizeSizes="true"
+            app:av_bubblesSize="80dp"
+            app:av_layersCount="4"
+            app:av_wavesCount="7"
+            app:av_wavesFooterHeight="10dp"
+            app:av_wavesHeight="100dp" />-->
+
+</RelativeLayout>
