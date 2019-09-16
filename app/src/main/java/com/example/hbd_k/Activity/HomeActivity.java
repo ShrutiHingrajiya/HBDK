@@ -9,10 +9,12 @@ import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
 import android.view.animation.TranslateAnimation;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
 import android.widget.RelativeLayout;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.easyandroidanimations.library.BounceAnimation;
 import com.example.hbd_k.R;
 
 public class HomeActivity extends AppCompatActivity {
@@ -22,6 +24,7 @@ public class HomeActivity extends AppCompatActivity {
     Animation animFadeIn;
     boolean isBottom = true;
     RelativeLayout lnMain;
+    LinearLayout ln1, ln2, ln3;
 
 
     @Override
@@ -34,18 +37,28 @@ public class HomeActivity extends AppCompatActivity {
         img2 = findViewById(R.id.image_view_2);
         img3 = findViewById(R.id.image_view_3);
         lnMain = findViewById(R.id.lnMain);
-        //   ((AnimationDrawable) img.getBackground()).start();
+        ln1 = findViewById(R.id.ln1);
+        ln2 = findViewById(R.id.ln2);
+        ln3 = findViewById(R.id.ln3);
 
-        animFadeIn = AnimationUtils.loadAnimation(getApplicationContext(),
-                R.anim.baunce);
-        if (isBottom) {
-            SlideToAbove();
-            isBottom = false;
-        } else {
 
-            SlideToDown();
-            isBottom = true;
-        }
+        new BounceAnimation(ln1)
+                .setBounceDistance(500)
+                .setNumOfBounces(15)
+                .setDuration(50000)
+                .animate();
+
+        new BounceAnimation(ln2)
+                .setBounceDistance(400)
+                .setNumOfBounces(15)
+                .setDuration(40000)
+                .animate();
+
+        new BounceAnimation(ln3)
+                .setBounceDistance(600)
+                .setNumOfBounces(15)
+                .setDuration(60000)
+                .animate();
     }
 
     public void SlideToAbove() {
@@ -168,5 +181,6 @@ public class HomeActivity extends AppCompatActivity {
             animator.addListener(listener);
         }
         return animator;
+
     }
 }
