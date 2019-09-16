@@ -23,6 +23,7 @@ public class HomeActivity extends AppCompatActivity {
     boolean isBottom = true;
     RelativeLayout lnMain;
 
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
