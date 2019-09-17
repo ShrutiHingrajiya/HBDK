@@ -4,6 +4,7 @@ import android.content.Context;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageView;
 
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
@@ -17,8 +18,16 @@ public class Adapter_Memories extends RecyclerView.Adapter<Adapter_Memories.Fees
 
     Context context;
     List<String> arrayList = new ArrayList<>();
-    int[] images = {R.drawable.splash1, R.drawable.splash2, R.drawable.card1,
-            R.drawable.card2, R.drawable.card3};
+    int[] imagesRight = {R.drawable.m1, R.drawable.m3,
+            R.drawable.m5,
+            R.drawable.m7, R.drawable.m9,
+            R.drawable.m11};
+
+    int[] imagesLeft = {
+            R.drawable.m2, R.drawable.m4, R.drawable.m6, R.drawable.m8, R.drawable.m10, R.drawable.m12
+    };
+
+  //  String[] textRight ={R.string}
 
     public Adapter_Memories(Context context) {
         this.context = context;
@@ -35,18 +44,25 @@ public class Adapter_Memories extends RecyclerView.Adapter<Adapter_Memories.Fees
     @Override
     public void onBindViewHolder(@NonNull FeesViewHolder holder, int position) {
 
+        holder.imgRight.setImageResource(imagesRight[position]);
+        holder.imgLeft.setImageResource(imagesLeft[position]);
 
     }
 
     @Override
     public int getItemCount() {
-        return 9;
+        return imagesLeft.length;
     }
 
     public class FeesViewHolder extends RecyclerView.ViewHolder {
+
+        ImageView imgRight, imgLeft;
+
         public FeesViewHolder(@NonNull View itemView) {
             super(itemView);
 
+            imgLeft = itemView.findViewById(R.id.imgLeft);
+            imgRight = itemView.findViewById(R.id.imgRight);
         }
     }
 
