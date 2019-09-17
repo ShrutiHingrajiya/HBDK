@@ -1,3 +1,17 @@
 <resources>
     <string name="app_name">HBD-K</string>
+
+    <string name="text1">Excelsior Thread Art</string>
+    <string name="text2">6th Anniversary</string>
+    <string name="text3">6th Anniversary</string>
+    <string name="text4">6th Anniversary Cake</string>
+    <string name="text5">6th Anniversary Party</string>
+    <string name="text6">Excelsior Team</string>
+    <string name="text7">Excelsior Team</string>
+    <string name="text8">Birthday 2018</string>
+    <string name="text9">Christmas 2018</string>
+    <string name="text10">Rajal Birthday</string>
+    <string name="text11">August Birthday</string>
+    <string name="text12">Poojan Birthday</string>
+
 </resources>
