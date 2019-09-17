@@ -19,6 +19,8 @@ public class MemoriesActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_memories);
 
+
+
         recyclerMemories = findViewById(R.id.recyclerMemories);
 
         Adapter_Memories adt = new Adapter_Memories(MemoriesActivity.this);

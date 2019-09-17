@@ -18,6 +18,7 @@ public class Adapter_Memories extends RecyclerView.Adapter<Adapter_Memories.Fees
 
     Context context;
     List<String> arrayList = new ArrayList<>();
+
     int[] imagesRight = {R.drawable.m1, R.drawable.m3,
             R.drawable.m5,
             R.drawable.m7, R.drawable.m9,
