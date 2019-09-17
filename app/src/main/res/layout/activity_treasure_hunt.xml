@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context=".Activity.TreasureHuntActivity">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:orientation="vertical"
+        android:id="@+id/linear_bg_color"
+        android:background="@color/appBlue"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:orientation="vertical"
+            android:layout_marginBottom="@dimen/_20sdp"
+            android:layout_height="wrap_content">
+
+            <androidx.viewpager.widget.ViewPager
+                android:id="@+id/view_pager_hunt"
+                android:layout_width="match_parent"
+                android:layout_marginTop="@dimen/_minus10sdp"
+                android:layout_height="match_parent"
+                android:layout_marginVertical="@dimen/_40sdp">
+
+            </androidx.viewpager.widget.ViewPager>
+
+
+        </LinearLayout>
+
+        <com.tbuonomo.viewpagerdotsindicator.WormDotsIndicator
+            android:id="@+id/worm_dots_indicator"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            app:dotsColor="#FFEB3B"
+            android:layout_marginTop="@dimen/_minus20sdp"
+            app:dotsStrokeColor="#FFEB3B"
+            app:dotsCornerRadius="8dp"
+            app:dotsSize="@dimen/_10sdp"
+            app:dotsSpacing="@dimen/_2sdp"
+            app:dotsStrokeWidth="2dp" />
+
+    </LinearLayout>
+</LinearLayout>
