@@ -14,11 +14,7 @@
         android:theme="@style/AppTheme">
         <activity android:name=".Activity.TreasureHuntActivity">
 
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
 
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
 
         </activity>
         <activity android:name=".Activity.MemoriesActivity" />
@@ -31,6 +27,14 @@
 
         </activity>
         <activity android:name=".MainActivity" />
+
+        <activity android:name=".Activity.MasterTreasure" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
     </application>
 
     <uses-feature
