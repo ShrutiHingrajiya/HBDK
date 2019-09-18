@@ -36,6 +36,11 @@
     <color name="text_color_dark_grey">#6e6e6e</color>
     <color name="text_color_green">@color/color_green_qb</color>
 
+
+    <color name="slider_color_1">#8940fe</color>
+    <color name="slider_color_2">#00B8Fc</color>
+    <color name="slider_color_3">#eb408b</color>
+
     <color name="random_color_1">#ff9500</color>
     <color name="random_color_2">#007aff</color>
     <color name="random_color_3">#ff0091</color>
