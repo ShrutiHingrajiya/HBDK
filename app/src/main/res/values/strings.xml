@@ -27,4 +27,50 @@
     <string name="frize_hint">Open Me Up And Take a Peek,Inside You Will Find A Frozan Treat</string>
     <string name="Chair_hint">Chair</string>
 
+
+    <string name="wish1">Anjali</string>
+    <string name="wish2">Pooja</string>
+    <string name="wish3">Heminsh</string>
+    <string name="wish4">Yogesh</string>
+    <string name="wish5">Rajal</string>
+    <string name="wish6">Shubhda</string>
+    <string name="wish7">Abhilav</string>
+    <string name="wish8">Vaishali</string>
+    <string name="wish9">Shruti</string>
+    <string name="wish10">Nikita</string>
+    <string name="wish11">Nidhi</string>
+    <string name="wish12">Dhrumil</string>
+    <string name="wish13">Kena</string>
+    <string name="wish14">Pratik</string>
+    <string name="wish15">Aashish</string>
+    <string name="wish16">JD</string>
+    <string name="wish17">Komal</string>
+    <string name="wish18">Himanshu</string>
+    <string name="wish19"></string>
+    <string name="wish20"></string>
+    <string name="wish21"></string>
+    <string name="wish22"></string>
+    <string name="wish23"></string>
+    <string name="wish24"></string>
+    <string name="wish25"></string>
+
+
+    <string name="wishD1"></string>
+    <string name="wishD2"></string>
+    <string name="wishD3"></string>
+    <string name="wishD4"></string>
+    <string name="wishD5"></string>
+    <string name="wishD6"></string>
+    <string name="wishD7"></string>
+    <string name="wishD8"></string>
+    <string name="wishD9"></string>
+    <string name="wishD10"></string>
+    <string name="wishD11"></string>
+    <string name="wishD12"></string>
+    <string name="wishD13"></string>
+    <string name="wishD14"></string>
+    <string name="wishD15"></string>
+    <string name="wishD16"></string>
+
+
 </resources>

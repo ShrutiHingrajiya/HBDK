@@ -1,7 +1,9 @@
 package com.example.hbd_k.Activity;
 
 import android.annotation.SuppressLint;
+import android.content.Intent;
 import android.os.Bundle;
+import android.view.View;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
@@ -20,7 +22,6 @@ public class MemoriesActivity extends AppCompatActivity {
         setContentView(R.layout.activity_memories);
 
 
-
         recyclerMemories = findViewById(R.id.recyclerMemories);
 
         Adapter_Memories adt = new Adapter_Memories(MemoriesActivity.this);
@@ -29,5 +30,6 @@ public class MemoriesActivity extends AppCompatActivity {
         @SuppressLint("WrongConstant") RecyclerView.LayoutManager mLayoutManager = new LinearLayoutManager(MemoriesActivity.this, LinearLayoutManager.VERTICAL, false);
         recyclerMemories.setLayoutManager(mLayoutManager);
         recyclerMemories.setAdapter(adt);
+
     }
 }

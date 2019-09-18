@@ -48,21 +48,21 @@ public class HomeActivity extends AppCompatActivity {
 
         new BounceAnimation(ln1)
                 .setBounceDistance(500)
-                .setNumOfBounces(15)
-                .setDuration(50000)
+                .setNumOfBounces(23)
+                .setDuration(100000)
                 .animate();
 
 
         new BounceAnimation(ln2)
                 .setBounceDistance(400)
-                .setNumOfBounces(15)
-                .setDuration(40000)
+                .setNumOfBounces(23)
+                .setDuration(80000)
                 .animate();
 
         new BounceAnimation(ln3)
                 .setBounceDistance(600)
-                .setNumOfBounces(15)
-                .setDuration(60000)
+                .setNumOfBounces(23)
+                .setDuration(120000)
                 .animate();
 
         this.setListeners();

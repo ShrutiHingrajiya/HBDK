@@ -13,4 +13,11 @@
         <item name="android:windowTranslucentNavigation">false</item>
     </style>
 
+
+    <style name="ServicesProgressBar" parent="Theme.AppCompat.Light.Dialog">
+        <item name="colorAccent">@color/colorAccent</item>
+        <item name="colorPrimary">#CACACA</item>
+        <item name="colorPrimaryDark">#CACACA</item>
+    </style>
+
 </resources>
