@@ -6,109 +6,150 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:background="@color/colorPrimaryDark"
     android:orientation="vertical"
-    android:padding="@dimen/_26sdp"
+
     tools:context=".Activity.LevelCompleteActivity">
 
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:gravity="center"
-        android:letterSpacing="0.08"
-        android:text="You reached a new level !!"
-        android:textColor="#fff"
-        android:textSize="@dimen/_16ssp"
-        android:textStyle="bold" />
-
-
-    <LinearLayout
-        android:layout_marginVertical="@dimen/_10sdp"
-        android:layout_width="match_parent"
-        android:layout_height="0dp"
-        android:layout_weight="1">
-
-    <!--    <com.airbnb.lottie.LottieAnimationView
-            android:id="@+id/lav_actionBar"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:scaleType="centerCrop"
-            app:lottie_autoPlay="true"
-            app:lottie_fileName="win.json"
-            app:lottie_loop="true" />-->
-
-        <ImageView
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:src="@drawable/level_up"
-            android:padding="@dimen/_30sdp"/>
-
-    </LinearLayout>
-
-
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:gravity="center"
-        android:id="@+id/txtLevelNo"
-        android:text="Level 7"
-        android:textColor="@color/colorAccent"
-        android:textSize="@dimen/_16ssp"
-        android:textStyle="bold" />
-
-
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="@dimen/_20sdp"
-        android:gravity="center"
-        android:letterSpacing="0.05"
-        android:text="Wow... you're growing very quickly.\nkeep rocking."
-        android:textColor="#fff"
-        android:textSize="@dimen/_12ssp" />
-
-
-    <TextView
-        android:id="@+id/txtNextLevel"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center"
-        android:layout_marginTop="@dimen/_20sdp"
-        android:background="@color/colorAccent"
-        android:paddingHorizontal="@dimen/_20sdp"
-        android:paddingVertical="@dimen/_6sdp"
-        android:text="NEXT"
-        android:textColor="#fff"
-        android:textStyle="bold" />
-
-    <ProgressBar
-        android:id="@+id/progressBar"
-        style="?android:attr/progressBarStyleHorizontal"
-        android:layout_width="match_parent"
-        android:layout_height="@dimen/_4sdp"
-        android:layout_marginTop="@dimen/_40sdp"
-        android:background="#CACACA"
-        android:gravity="start|center_vertical"
-        android:indeterminate="false"
-        android:max="100"
-        android:progress="60"
-        android:theme="@style/ServicesProgressBar" />
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal">
+        android:layout_height="match_parent">
 
-        <TextView
-            android:id="@+id/txtLevelOutOf"
+        <FrameLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="@dimen/_4sdp"
-            android:gravity="right"
-            android:letterSpacing="0.05"
-            android:text="7/10"
-            android:textColor="#fff"
-            android:textSize="@dimen/_14ssp" />
+            android:layout_height="match_parent">
 
 
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:orientation="vertical"
+                android:padding="@dimen/_26sdp"
+                android:layout_height="match_parent">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:letterSpacing="0.08"
+                    android:text="You reached a new level !!"
+                    android:textColor="#fff"
+                    android:textSize="@dimen/_16ssp"
+                    android:textStyle="bold" />
+
+
+                <LinearLayout
+                    android:layout_marginVertical="@dimen/_10sdp"
+                    android:layout_width="match_parent"
+                    android:orientation="vertical"
+                    android:layout_height="0dp"
+                    android:layout_weight="1">
+
+                    <!--    <com.airbnb.lottie.LottieAnimationView
+                            android:id="@+id/lav_actionBar"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:scaleType="centerCrop"
+                            app:lottie_autoPlay="true"
+                            app:lottie_fileName="win.json"
+                            app:lottie_loop="true" />-->
+
+                    <FrameLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent">
+
+                        <ImageView
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:src="@drawable/level_up"
+                            android:padding="@dimen/_30sdp" />
+
+                        <com.jetradarmobile.snowfall.SnowfallView
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            app:snowflakeAlphaMax="100"
+                            app:snowflakeAlphaMin="50"
+                            app:snowflakeAngleMax="5"
+                            app:snowflakeImage="@drawable/lit_snow"
+                            app:snowflakeSizeMax="32dp"
+                            app:snowflakeSizeMin="8dp"
+                            app:snowflakeSpeedMax="12"
+                            app:snowflakeSpeedMin="6"
+                            app:snowflakesAlreadyFalling="false"
+                            app:snowflakesFadingEnabled="true"
+                            app:snowflakesNum="15" />
+                    </FrameLayout>
+                </LinearLayout>
+
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:id="@+id/txtLevelNo"
+                    android:text="Level 7"
+                    android:textColor="@color/colorAccent"
+                    android:textSize="@dimen/_16ssp"
+                    android:textStyle="bold" />
+
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_20sdp"
+                    android:gravity="center"
+                    android:letterSpacing="0.05"
+                    android:text="Wow... you're growing very quickly.\nkeep rocking."
+                    android:textColor="#fff"
+                    android:textSize="@dimen/_12ssp" />
+
+
+                <TextView
+                    android:id="@+id/txtNextLevel"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_marginTop="@dimen/_20sdp"
+                    android:background="@color/colorAccent"
+                    android:paddingHorizontal="@dimen/_20sdp"
+                    android:paddingVertical="@dimen/_6sdp"
+                    android:text="NEXT"
+                    android:textColor="#fff"
+                    android:textStyle="bold" />
+
+                <ProgressBar
+                    android:id="@+id/progressBar"
+                    style="?android:attr/progressBarStyleHorizontal"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/_4sdp"
+                    android:layout_marginTop="@dimen/_40sdp"
+                    android:background="#CACACA"
+                    android:gravity="start|center_vertical"
+                    android:indeterminate="false"
+                    android:max="100"
+                    android:progress="60"
+                    android:theme="@style/ServicesProgressBar" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:id="@+id/txtLevelOutOf"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/_4sdp"
+                        android:gravity="right"
+                        android:letterSpacing="0.05"
+                        android:text="7/10"
+                        android:textColor="#fff"
+                        android:textSize="@dimen/_14ssp" />
+
+
+                </LinearLayout>
     </LinearLayout>
 
+
+        </FrameLayout>
+
+    </LinearLayout>
 </LinearLayout>
