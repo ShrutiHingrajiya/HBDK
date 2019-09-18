@@ -1,7 +1,7 @@
 package com.example.hbd_k.Activity;
 
-import android.graphics.Color;
 import android.os.Bundle;
+import android.util.Log;
 import android.widget.LinearLayout;
 
 import androidx.appcompat.app.AppCompatActivity;
@@ -33,34 +33,36 @@ public class TreasureHuntActivity extends AppCompatActivity {
         ButterKnife.bind(this);
 
 
-        color_list=new int[10];
-        color_list[0] = Color.BLACK;
-        color_list[1] = Color.BLUE;
-        color_list[2] = Color.CYAN;
-        color_list[3] = Color.DKGRAY;
-        color_list[4] = Color.GRAY;
-        color_list[5] = Color.GREEN;
-        color_list[6] = Color.LTGRAY;
-        color_list[7] = Color.MAGENTA;
-        color_list[8] = Color.RED;
-        color_list[9] = Color.TRANSPARENT;
+        color_list = new int[9];
+        color_list[0] = R.color.slider_color_1;
+        color_list[1] = R.color.slider_color_2;
+        color_list[2] = R.color.slider_color_3;
+        color_list[3] = R.color.slider_color_1;
+        color_list[4] = R.color.slider_color_2;
+        color_list[5] = R.color.slider_color_3;
+        color_list[6] = R.color.slider_color_1;
+        color_list[7] = R.color.slider_color_2;
+        color_list[8] = R.color.slider_color_3;
 
         AdapterHuntList adapter = new AdapterHuntList(getApplicationContext());
         viewPagerHunt.setAdapter(adapter);
         viewPagerHunt.setCurrentItem(0);
         wormDotsIndicator.setViewPager(viewPagerHunt);
-
+        linearBgColor.setBackgroundResource(color_list[0]);
 
         viewPagerHunt.addOnPageChangeListener(new ViewPager.OnPageChangeListener() {
             public void onPageScrollStateChanged(int state) {
+                Log.e("Possition", String.valueOf("p")+"__");
             }
 
             public void onPageScrolled(int position, float positionOffset, int positionOffsetPixels) {
+
             }
 
             public void onPageSelected(int position) {
                 // Check if this is the page you want.
-                linearBgColor.setBackgroundColor(color_list[position]);
+                Log.e("Possition1", String.valueOf(position)+"__");
+                linearBgColor.setBackgroundResource(color_list[position]);
 
             }
         });
