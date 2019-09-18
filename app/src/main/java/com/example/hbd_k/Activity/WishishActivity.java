@@ -12,8 +12,6 @@ import butterknife.ButterKnife;
 
 public class WishishActivity extends AppCompatActivity {
 
-    @BindView(R.id.grid_view)
-    StaggeredGridView gridView;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
