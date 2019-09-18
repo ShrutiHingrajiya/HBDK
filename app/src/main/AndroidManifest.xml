@@ -2,6 +2,8 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.example.hbd_k">
 
+
+    <uses-permission android:name="android.permission.INTERNET" />
     <application
         android:name=".Activity.MyApplication"
         android:allowBackup="true"
@@ -31,6 +33,10 @@
 
         </activity>
         <activity android:name=".MainActivity" />
+
+        <meta-data
+            android:name="preloaded_fonts"
+            android:resource="@array/preloaded_fonts" />
     </application>
 
     <uses-feature

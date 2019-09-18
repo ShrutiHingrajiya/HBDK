@@ -9,6 +9,11 @@ import androidx.viewpager.widget.ViewPager;
 
 import com.example.hbd_k.Adapter.AdapterHuntList;
 import com.example.hbd_k.R;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
 import com.tbuonomo.viewpagerdotsindicator.WormDotsIndicator;
 
 import butterknife.BindView;
@@ -23,6 +28,9 @@ public class TreasureHuntActivity extends AppCompatActivity {
     @BindView(R.id.linear_bg_color)
     LinearLayout linearBgColor;
 
+    FirebaseDatabase database = FirebaseDatabase.getInstance();
+    DatabaseReference myRef = database.getReference("Treasure");
+
 
     int color_list[];
 
@@ -33,6 +41,26 @@ public class TreasureHuntActivity extends AppCompatActivity {
         ButterKnife.bind(this);
 
 
+        myRef.addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(DataSnapshot dataSnapshot) {
+
+
+                Log.e("Changed", "******");
+                Log.e("DataSnapshot", dataSnapshot.child("id").getValue() + "__");
+                int updatedIndex = Integer.parseInt(dataSnapshot.child("id").getValue().toString());
+                AdapterHuntList adapter = new AdapterHuntList(getApplicationContext(), updatedIndex);
+                viewPagerHunt.setAdapter(adapter);
+                viewPagerHunt.setCurrentItem(updatedIndex - 1);
+                wormDotsIndicator.setViewPager(viewPagerHunt);
+            }
+
+            @Override
+            public void onCancelled(DatabaseError error) {
+
+                Log.e("Cancled", "******");
+            }
+        });
         color_list = new int[9];
         color_list[0] = R.color.slider_color_1;
         color_list[1] = R.color.slider_color_2;
@@ -44,7 +72,7 @@ public class TreasureHuntActivity extends AppCompatActivity {
         color_list[7] = R.color.slider_color_2;
         color_list[8] = R.color.slider_color_3;
 
-        AdapterHuntList adapter = new AdapterHuntList(getApplicationContext());
+        AdapterHuntList adapter = new AdapterHuntList(getApplicationContext(), 1);
         viewPagerHunt.setAdapter(adapter);
         viewPagerHunt.setCurrentItem(0);
         wormDotsIndicator.setViewPager(viewPagerHunt);
