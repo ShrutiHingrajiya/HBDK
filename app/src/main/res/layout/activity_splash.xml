@@ -3,15 +3,13 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/splash_com"
     tools:context=".Activity.SplashActivity">
 
     <ImageView
         android:id="@+id/imgSplash"
         android:layout_width="match_parent"
-        android:scaleType="fitXY"
-        android:visibility="gone"
         android:layout_height="match_parent"
-        android:src="@drawable/splash_com" />
+        android:background="@drawable/splash_com"
+        android:tint="@color/colorPrimaryDark" />
 
 </LinearLayout>
