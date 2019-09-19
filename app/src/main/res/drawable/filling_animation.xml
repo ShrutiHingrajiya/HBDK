@@ -3,15 +3,15 @@
     android:oneshot="false">
 
     <item
-        android:drawable="@drawable/card1"
+        android:drawable="@drawable/ic_like"
         android:duration="500" />
 
     <item
-        android:drawable="@drawable/card2"
+        android:drawable="@drawable/ic_comment"
         android:duration="500" />
 
     <item
-        android:drawable="@drawable/card3"
+        android:drawable="@drawable/ic_like"
         android:duration="500" />
 
 
