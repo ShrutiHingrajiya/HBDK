@@ -54,10 +54,7 @@ public class TreasureHuntActivity extends AppCompatActivity {
             @Override
             public void onDataChange(DataSnapshot dataSnapshot) {
 
-                if (first) {
-                    first = false;
-                    return;
-                }
+
                 int updatedIndex = Integer.parseInt(dataSnapshot.child("id").getValue().toString());
                 changeLevel(updatedIndex);
 
@@ -131,8 +128,14 @@ public class TreasureHuntActivity extends AppCompatActivity {
 
 
     public void changeLevel(int level) {
-        callLevelCompleteDialog(level);
-        Log.e("Changed", "******");
+
+        if (first) {
+            first = false;
+            return;
+        }else{
+            callLevelCompleteDialog(level);
+            Log.e("Changed", "******");
+        }
 
         String[] dummylist = new String[level];
 
@@ -141,7 +144,6 @@ public class TreasureHuntActivity extends AppCompatActivity {
         wormDotsIndicator.setViewPager(viewPagerHunt);
         viewPagerHunt.setAdapter(adapter);
         Log.e("level", "******" + level);
-
 
         new Handler().postDelayed(new Runnable() {
             @Override
