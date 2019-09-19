@@ -1,14 +1,10 @@
 package com.example.hbd_k.Activity;
 
-import android.animation.AnimatorListenerAdapter;
-import android.animation.ObjectAnimator;
 import android.content.Intent;
 import android.os.Bundle;
 import android.os.Handler;
 import android.view.View;
 import android.view.animation.Animation;
-import android.view.animation.AnimationUtils;
-import android.view.animation.TranslateAnimation;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.RelativeLayout;
@@ -31,7 +27,6 @@ public class HomeActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-
 
 
         setContentView(R.layout.activity_home);
@@ -73,7 +68,8 @@ public class HomeActivity extends AppCompatActivity {
         ln1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
+                Intent i = new Intent(getApplicationContext(), WishishActivity.class);
+                startActivity(i);
             }
         });
         ln2.setOnClickListener(new View.OnClickListener() {
@@ -85,7 +81,7 @@ public class HomeActivity extends AppCompatActivity {
         ln3.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent i=new Intent(getApplicationContext(),MemoriesActivity.class);
+                Intent i = new Intent(getApplicationContext(), MemoriesActivity.class);
                 startActivity(i);
             }
         });
