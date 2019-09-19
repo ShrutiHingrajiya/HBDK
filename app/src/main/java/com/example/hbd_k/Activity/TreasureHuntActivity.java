@@ -1,8 +1,17 @@
 package com.example.hbd_k.Activity;
 
+import android.app.Dialog;
 import android.os.Bundle;
+import android.os.Handler;
 import android.util.Log;
+import android.view.Gravity;
+import android.view.View;
+import android.view.ViewGroup;
+import android.view.Window;
+import android.view.WindowManager;
 import android.widget.LinearLayout;
+import android.widget.ProgressBar;
+import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.viewpager.widget.ViewPager;
@@ -31,9 +40,9 @@ public class TreasureHuntActivity extends AppCompatActivity {
     FirebaseDatabase database = FirebaseDatabase.getInstance();
     DatabaseReference myRef = database.getReference("Treasure");
 
-
+    boolean first = true;
     int color_list[];
-
+    AdapterHuntList adapter;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -45,14 +54,13 @@ public class TreasureHuntActivity extends AppCompatActivity {
             @Override
             public void onDataChange(DataSnapshot dataSnapshot) {
 
-
-                Log.e("Changed", "******");
-                Log.e("DataSnapshot", dataSnapshot.child("id").getValue() + "__");
+                if (first) {
+                    first = false;
+                    return;
+                }
                 int updatedIndex = Integer.parseInt(dataSnapshot.child("id").getValue().toString());
-                AdapterHuntList adapter = new AdapterHuntList(getApplicationContext(), updatedIndex);
-                viewPagerHunt.setAdapter(adapter);
-                viewPagerHunt.setCurrentItem(updatedIndex - 1);
-                wormDotsIndicator.setViewPager(viewPagerHunt);
+                changeLevel(updatedIndex);
+
             }
 
             @Override
@@ -61,6 +69,31 @@ public class TreasureHuntActivity extends AppCompatActivity {
                 Log.e("Cancled", "******");
             }
         });
+
+
+        /*myRef.addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(DataSnapshot dataSnapshot) {
+
+
+                Log.e("Changed", "******");
+                Log.e("DataSnapshot", dataSnapshot.child("id").getValue() + "__");
+                int updatedIndex = Integer.parseInt(dataSnapshot.child("id").getValue().toString());
+                AdapterHuntList adapter = new AdapterHuntList(getApplicationContext(), updatedIndex);
+                viewPagerHunt.setAdapter(adapter);
+
+                wormDotsIndicator.setViewPager(viewPagerHunt);
+                viewPagerHunt.setCurrentItem(updatedIndex-1);
+            }
+
+            @Override
+            public void onCancelled(DatabaseError error) {
+
+                Log.e("Cancled", "******");
+            }
+        });*/
+
+
         color_list = new int[9];
         color_list[0] = R.color.slider_color_1;
         color_list[1] = R.color.slider_color_2;
@@ -72,15 +105,17 @@ public class TreasureHuntActivity extends AppCompatActivity {
         color_list[7] = R.color.slider_color_2;
         color_list[8] = R.color.slider_color_3;
 
-        AdapterHuntList adapter = new AdapterHuntList(getApplicationContext(), 1);
+
+        String[] dummylist = new String[1];
+        adapter = new AdapterHuntList(getApplicationContext(), dummylist);
         viewPagerHunt.setAdapter(adapter);
-        viewPagerHunt.setCurrentItem(0);
+
         wormDotsIndicator.setViewPager(viewPagerHunt);
+        viewPagerHunt.setCurrentItem(0);
         linearBgColor.setBackgroundResource(color_list[0]);
 
         viewPagerHunt.addOnPageChangeListener(new ViewPager.OnPageChangeListener() {
             public void onPageScrollStateChanged(int state) {
-                Log.e("Possition", String.valueOf("p")+"__");
             }
 
             public void onPageScrolled(int position, float positionOffset, int positionOffsetPixels) {
@@ -88,11 +123,71 @@ public class TreasureHuntActivity extends AppCompatActivity {
             }
 
             public void onPageSelected(int position) {
-                // Check if this is the page you want.
-                Log.e("Possition1", String.valueOf(position)+"__");
                 linearBgColor.setBackgroundResource(color_list[position]);
 
             }
         });
+    }
+
+
+    public void changeLevel(int level) {
+        callLevelCompleteDialog(level);
+        Log.e("Changed", "******");
+
+        String[] dummylist = new String[level];
+
+        Log.e("DummyListSize", String.valueOf(dummylist.length) + "___");
+        adapter = new AdapterHuntList(getApplicationContext(), dummylist);
+        wormDotsIndicator.setViewPager(viewPagerHunt);
+        viewPagerHunt.setAdapter(adapter);
+        Log.e("level", "******" + level);
+
+
+        new Handler().postDelayed(new Runnable() {
+            @Override
+            public void run() {
+                viewPagerHunt.setCurrentItem(level - 1, true);
+            }
+        }, 500);
+        //   viewPagerHunt.setCurrentItem(level-1);
+    }
+
+    public void callLevelCompleteDialog(int levelcount) {
+
+
+        Dialog dialog = new Dialog(this, R.style.mytheme);
+        dialog.getWindow()
+                .getAttributes().windowAnimations = R.style.DialogAnimationOutUpInUp;
+        dialog.requestWindowFeature(Window.FEATURE_NO_TITLE);
+        dialog.setContentView(R.layout.activity_level_complete);
+
+        dialog.setCancelable(true);
+        dialog.setCanceledOnTouchOutside(true);
+
+        dialog.getWindow().setLayout(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.MATCH_PARENT);
+        dialog.getWindow().setBackgroundDrawableResource(android.R.color.transparent);
+        dialog.getWindow().setGravity(Gravity.TOP);
+
+        dialog.getWindow().addFlags(WindowManager.LayoutParams.FLAG_BLUR_BEHIND);
+
+
+        TextView txtNextLevel = dialog.findViewById(R.id.txtNextLevel);
+        TextView textlevelNo = dialog.findViewById(R.id.txtLevelNo);
+        TextView txtLevelOutOf = dialog.findViewById(R.id.txtLevelOutOf);
+        ProgressBar progressBar = dialog.findViewById(R.id.progressBar);
+
+        txtLevelOutOf.setText(levelcount + "/10");
+        progressBar.setProgress(levelcount);
+        textlevelNo.setText("Level " + levelcount + " ");
+        txtNextLevel.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                dialog.dismiss();
+            }
+        });
+
+        dialog.show();
+
+
     }
 }
