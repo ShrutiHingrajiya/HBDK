@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:background="@null"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:contentPaddingTop="@dimen/_20sdp"
+        app:contentPaddingLeft="@dimen/_16sdp"
+        app:contentPaddingRight="@dimen/_16sdp"
+        app:cardBackgroundColor="#fff"
+        android:layout_margin="@dimen/_4sdp"
+        app:contentPaddingBottom="@dimen/_20sdp"
+        app:cardCornerRadius="@dimen/_6sdp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:layout_gravity="center"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <de.hdodenhof.circleimageview.CircleImageView
+                    android:layout_width="@dimen/_30sdp"
+                    android:src="@drawable/level_up"
+                    app:civ_border_color="@color/colorPrimary"
+                    app:civ_border_overlay="true"
+                    android:id="@+id/imgEmp"
+                    app:civ_border_width="@dimen/_1sdp"
+                    android:layout_height="@dimen/_30sdp" />
+
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Shruti"
+                    android:id="@+id/txtEmpName"
+                    android:layout_gravity="center"
+                    android:layout_marginHorizontal="@dimen/_4sdp"
+                    android:textSize="@dimen/_12ssp"
+                    android:textStyle="bold"
+                    android:textAllCaps="true"
+                    android:letterSpacing="0.08"
+                    android:textColor="@color/colorPrimaryDark" />
+
+
+            </LinearLayout>
+
+            <TextView
+                android:layout_marginTop="@dimen/_4sdp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/txtEmpWish"
+                android:textSize="@dimen/_10ssp"
+                android:textColor="#000"
+                android:lineSpacingExtra="@dimen/_2sdp"
+                android:text="lfkgj k k k k k k k k k k k k k k k k k k k k k k k k k k k k k klhgfhkfgkjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjghkfjh jhgfjkhf fjghkjfghkjfghjk fgh kfjgh fkghkfghkfghkhk"/>
+
+        </LinearLayout>
+
+    </androidx.cardview.widget.CardView>
+
+</LinearLayout>

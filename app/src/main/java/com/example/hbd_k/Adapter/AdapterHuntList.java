@@ -17,17 +17,7 @@ public class AdapterHuntList extends PagerAdapter {
     public Context context;
 
     int length;
-    private int[] GalImages = new int[]{
-            R.drawable.card1,
-            R.drawable.card1,
-            R.drawable.card1,
-            R.drawable.card1,
-            R.drawable.card1,
-            R.drawable.card1,
-            R.drawable.card1,
-            R.drawable.card1,
-            R.drawable.card1
-    };
+    private String[] totallength ;
 
 
     private int[] clueslist = new int[]{
@@ -45,13 +35,16 @@ public class AdapterHuntList extends PagerAdapter {
     private int[] color_list = new int[9];
 
 
+
+
     LayoutInflater mLayoutInflater;
     TextView textHint;
 
-    public AdapterHuntList(Context context,int length) {
+    public AdapterHuntList(Context context,String[] dummylist) {
         this.context = context;
         mLayoutInflater = (LayoutInflater) context.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
-        this.length = length;
+
+        totallength=dummylist;
 
         color_list = new int[9];
         color_list[0] = R.color.slider_color_1;
@@ -67,7 +60,7 @@ public class AdapterHuntList extends PagerAdapter {
 
     @Override
     public int getCount() {
-        return length;
+        return totallength.length;
     }
 
 
@@ -85,7 +78,6 @@ public class AdapterHuntList extends PagerAdapter {
         ImageView imgquote = (ImageView) itemView.findViewById(R.id.image_quote);
 
         textHint.setText(context.getResources().getString(clueslist[position]));
-
 
         imgquote.setColorFilter(ContextCompat.getColor(context, color_list[position]), android.graphics.PorterDuff.Mode.SRC_IN);
         container.addView(itemView);
