@@ -1,9 +1,9 @@
 package com.example.hbd_k.Activity;
 
 import android.annotation.SuppressLint;
-import android.content.Intent;
 import android.os.Bundle;
-import android.view.View;
+import android.widget.FrameLayout;
+import android.widget.ImageView;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
@@ -14,7 +14,9 @@ import com.example.hbd_k.R;
 
 public class MemoriesActivity extends AppCompatActivity {
 
-    RecyclerView recyclerMemories;
+    public static RecyclerView recyclerMemories;
+    public static ImageView expanded_image;
+    public static FrameLayout container;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -23,6 +25,8 @@ public class MemoriesActivity extends AppCompatActivity {
 
 
         recyclerMemories = findViewById(R.id.recyclerMemories);
+        expanded_image = findViewById(R.id.expanded_image);
+        container = findViewById(R.id.container);
 
         Adapter_Memories adt = new Adapter_Memories(MemoriesActivity.this);
         recyclerMemories.setFocusable(false);
@@ -31,5 +35,10 @@ public class MemoriesActivity extends AppCompatActivity {
         recyclerMemories.setLayoutManager(mLayoutManager);
         recyclerMemories.setAdapter(adt);
 
+    }
+
+    @Override
+    public void onBackPressed() {
+        this.finish();
     }
 }

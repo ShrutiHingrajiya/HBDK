@@ -43,8 +43,7 @@ public class MasterTreasure extends AppCompatActivity {
         btn1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                myRef.child("id").setValue("1");
-                myRef.child("clue").setValue(getResources().getString(R.string.car_hint)).addOnCompleteListener(new OnCompleteListener<Void>() {
+                myRef.child("id").setValue("1").addOnCompleteListener(new OnCompleteListener<Void>() {
                     @Override
                     public void onComplete(@NonNull Task<Void> task) {
                         Toast.makeText(MasterTreasure.this, "Msg Sent", Toast.LENGTH_SHORT).show();
@@ -56,8 +55,8 @@ public class MasterTreasure extends AppCompatActivity {
         btn2.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                myRef.child("id").setValue("2");
-                myRef.child("clue").setValue(getResources().getString(R.string.tample_hint)).addOnCompleteListener(new OnCompleteListener<Void>() {
+                myRef.child("id").setValue("2")
+              .addOnCompleteListener(new OnCompleteListener<Void>() {
                     @Override
                     public void onComplete(@NonNull Task<Void> task) {
                         Toast.makeText(MasterTreasure.this, "Msg Sent", Toast.LENGTH_SHORT).show();
@@ -69,8 +68,7 @@ public class MasterTreasure extends AppCompatActivity {
         btn3.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                myRef.child("id").setValue("3");
-                myRef.child("clue").setValue(getResources().getString(R.string.stickey_note_hint)).addOnCompleteListener(new OnCompleteListener<Void>() {
+                myRef.child("id").setValue("3").addOnCompleteListener(new OnCompleteListener<Void>() {
                     @Override
                     public void onComplete(@NonNull Task<Void> task) {
                         Toast.makeText(MasterTreasure.this, "Msg Sent", Toast.LENGTH_SHORT).show();
@@ -82,8 +80,7 @@ public class MasterTreasure extends AppCompatActivity {
         btn4.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                myRef.child("id").setValue("4");
-                myRef.child("clue").setValue(getResources().getString(R.string.moniter_hint)).addOnCompleteListener(new OnCompleteListener<Void>() {
+                myRef.child("id").setValue("4").addOnCompleteListener(new OnCompleteListener<Void>() {
                     @Override
                     public void onComplete(@NonNull Task<Void> task) {
                         Toast.makeText(MasterTreasure.this, "Msg Sent", Toast.LENGTH_SHORT).show();
@@ -95,8 +92,7 @@ public class MasterTreasure extends AppCompatActivity {
         btn5.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                myRef.child("id").setValue("5");
-                myRef.child("clue").setValue(getResources().getString(R.string.projector_hint)).addOnCompleteListener(new OnCompleteListener<Void>() {
+                myRef.child("id").setValue("5").addOnCompleteListener(new OnCompleteListener<Void>() {
                     @Override
                     public void onComplete(@NonNull Task<Void> task) {
                         Toast.makeText(MasterTreasure.this, "Msg Sent", Toast.LENGTH_SHORT).show();
@@ -108,8 +104,7 @@ public class MasterTreasure extends AppCompatActivity {
         btn6.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                myRef.child("id").setValue("6");
-                myRef.child("clue").setValue(getResources().getString(R.string.coofie_hint)).addOnCompleteListener(new OnCompleteListener<Void>() {
+                myRef.child("id").setValue("6").addOnCompleteListener(new OnCompleteListener<Void>() {
                     @Override
                     public void onComplete(@NonNull Task<Void> task) {
                         Toast.makeText(MasterTreasure.this, "Msg Sent", Toast.LENGTH_SHORT).show();
@@ -122,8 +117,7 @@ public class MasterTreasure extends AppCompatActivity {
         btn7.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                myRef.child("id").setValue("1");
-                myRef.child("clue").setValue(getResources().getString(R.string.broadband_hint)).addOnCompleteListener(new OnCompleteListener<Void>() {
+                myRef.child("id").setValue("7").addOnCompleteListener(new OnCompleteListener<Void>() {
                     @Override
                     public void onComplete(@NonNull Task<Void> task) {
                         Toast.makeText(MasterTreasure.this, "Msg Sent", Toast.LENGTH_SHORT).show();
@@ -135,8 +129,7 @@ public class MasterTreasure extends AppCompatActivity {
         btn8.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                myRef.child("id").setValue("8");
-                myRef.child("clue").setValue(getResources().getString(R.string.register_hint)).addOnCompleteListener(new OnCompleteListener<Void>() {
+                myRef.child("id").setValue("8").addOnCompleteListener(new OnCompleteListener<Void>() {
                     @Override
                     public void onComplete(@NonNull Task<Void> task) {
                         Toast.makeText(MasterTreasure.this, "Msg Sent", Toast.LENGTH_SHORT).show();
@@ -148,8 +141,7 @@ public class MasterTreasure extends AppCompatActivity {
         btn9.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                myRef.child("id").setValue("9");
-                myRef.child("clue").setValue(getResources().getString(R.string.frize_hint)).addOnCompleteListener(new OnCompleteListener<Void>() {
+                myRef.child("id").setValue("9").addOnCompleteListener(new OnCompleteListener<Void>() {
                     @Override
                     public void onComplete(@NonNull Task<Void> task) {
                         Toast.makeText(MasterTreasure.this, "Msg Sent", Toast.LENGTH_SHORT).show();
@@ -161,8 +153,7 @@ public class MasterTreasure extends AppCompatActivity {
         btn10.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                myRef.child("id").setValue("10");
-                myRef.child("clue").setValue(getResources().getString(R.string.Chair_hint)).addOnCompleteListener(new OnCompleteListener<Void>() {
+                myRef.child("id").setValue("10").addOnCompleteListener(new OnCompleteListener<Void>() {
                     @Override
                     public void onComplete(@NonNull Task<Void> task) {
                         Toast.makeText(MasterTreasure.this, "Msg Sent", Toast.LENGTH_SHORT).show();

@@ -75,7 +75,8 @@ public class HomeActivity extends AppCompatActivity {
         ln2.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
+                Intent i = new Intent(getApplicationContext(), TreasureHuntActivity.class);
+                startActivity(i);
             }
         });
         ln3.setOnClickListener(new View.OnClickListener() {

@@ -6,7 +6,6 @@
     android:orientation="vertical"
     tools:context=".Activity.HomeActivity">
 
-
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -31,10 +30,8 @@
                 android:background="@color/colorPrimaryDark"
                 android:orientation="vertical">
 
-
                 <TextView
                     android:layout_marginHorizontal="@dimen/_8sdp"
-
                     android:layout_gravity="center"
                     android:gravity="center"
                     android:layout_marginVertical="@dimen/_30sdp"
@@ -46,18 +43,14 @@
                     android:text="W\nI\nS\nH\nE\nS" />
 
             </LinearLayout>
-
-
         </LinearLayout>
 
         <LinearLayout
             android:layout_width="match_parent"
-
             android:layout_height="wrap_content"
             android:layout_alignParentBottom="true"
             android:layout_weight="1"
             android:orientation="vertical">
-
 
             <LinearLayout
                 android:id="@+id/ln2"
@@ -68,8 +61,6 @@
                 android:layout_gravity="center"
                 android:background="@color/colorPrimaryDark"
                 android:orientation="vertical">
-
-
 
                 <TextView
                     android:layout_marginVertical="@dimen/_30sdp"
@@ -84,13 +75,10 @@
                     android:text="G\nI\nF\nT\nS" />
 
             </LinearLayout>
-
-
         </LinearLayout>
 
         <LinearLayout
             android:layout_width="match_parent"
-
             android:layout_height="wrap_content"
             android:layout_alignParentBottom="true"
             android:layout_weight="1"
@@ -138,7 +126,6 @@
             android:layout_height="@dimen/_50sdp"
             android:layout_alignParentBottom="true"
             android:layout_margin="@dimen/_10sdp"
-            android:src="@drawable/gift"
             android:visibility="gone" />
 
 
@@ -157,7 +144,7 @@
             android:layout_alignParentBottom="true"
             android:layout_centerHorizontal="true"
             android:layout_margin="@dimen/_10sdp"
-            android:src="@drawable/wish" />
+          />
 
         <ImageView
             android:id="@+id/image_view_3"
@@ -166,7 +153,7 @@
             android:layout_alignParentRight="true"
             android:layout_alignParentBottom="true"
             android:layout_margin="@dimen/_10sdp"
-            android:src="@drawable/memories" />
+            />
     </RelativeLayout>
     <!--
         <com.cleveroad.audiovisualization.GLAudioVisualizationView xmlns:android="http://schemas.android.com/apk/res/android"

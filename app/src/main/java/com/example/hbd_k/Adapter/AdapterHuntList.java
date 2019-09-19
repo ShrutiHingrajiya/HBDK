@@ -17,7 +17,7 @@ public class AdapterHuntList extends PagerAdapter {
     public Context context;
 
     int length;
-    private String[] totallength ;
+    private String[] totallength;
 
 
     private int[] clueslist = new int[]{
@@ -35,16 +35,15 @@ public class AdapterHuntList extends PagerAdapter {
     private int[] color_list = new int[9];
 
 
-
-
     LayoutInflater mLayoutInflater;
     TextView textHint;
+    LinearLayout liText, liImage;
 
-    public AdapterHuntList(Context context,String[] dummylist) {
+    public AdapterHuntList(Context context, String[] dummylist) {
         this.context = context;
         mLayoutInflater = (LayoutInflater) context.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
 
-        totallength=dummylist;
+        totallength = dummylist;
 
         color_list = new int[9];
         color_list[0] = R.color.slider_color_1;
@@ -76,11 +75,32 @@ public class AdapterHuntList extends PagerAdapter {
 
         TextView textHint = (TextView) itemView.findViewById(R.id.text_hint);
         ImageView imgquote = (ImageView) itemView.findViewById(R.id.image_quote);
+        ImageView image_clue = (ImageView) itemView.findViewById(R.id.image_clue);
 
-        textHint.setText(context.getResources().getString(clueslist[position]));
+        LinearLayout liText = (LinearLayout) itemView.findViewById(R.id.liText);
+        LinearLayout liImage = (LinearLayout) itemView.findViewById(R.id.liImage);
+
+
 
         imgquote.setColorFilter(ContextCompat.getColor(context, color_list[position]), android.graphics.PorterDuff.Mode.SRC_IN);
         container.addView(itemView);
+
+        if (position == 0) {
+            liImage.setVisibility(View.VISIBLE);
+            liText.setVisibility(View.GONE);
+            image_clue.setImageResource(R.drawable.clue_t);
+
+        } else if (position == clueslist.length - 1) {
+            liImage.setVisibility(View.VISIBLE);
+            liText.setVisibility(View.GONE);
+            image_clue.setImageResource(R.drawable.clue_last);
+
+        } else {
+            liImage.setVisibility(View.GONE);
+            liText.setVisibility(View.VISIBLE);
+            textHint.setText(context.getResources().getString(clueslist[position]));
+
+        }
 
         return itemView;
     }

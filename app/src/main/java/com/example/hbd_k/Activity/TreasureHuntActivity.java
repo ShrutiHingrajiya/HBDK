@@ -43,6 +43,9 @@ public class TreasureHuntActivity extends AppCompatActivity {
     boolean first = true;
     int color_list[];
     AdapterHuntList adapter;
+
+
+    int latest_clue=0;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -54,8 +57,10 @@ public class TreasureHuntActivity extends AppCompatActivity {
             @Override
             public void onDataChange(DataSnapshot dataSnapshot) {
 
-
+                Log.e("FROM DB__", "FromDB__");
                 int updatedIndex = Integer.parseInt(dataSnapshot.child("id").getValue().toString());
+                latest_clue=updatedIndex;
+
                 changeLevel(updatedIndex);
 
             }
@@ -132,18 +137,20 @@ public class TreasureHuntActivity extends AppCompatActivity {
         if (first) {
             first = false;
             return;
-        }else{
+        } else {
+
+
             callLevelCompleteDialog(level);
-            Log.e("Changed", "******");
+          //  Log.e("Changed", "******");
         }
 
         String[] dummylist = new String[level];
 
-        Log.e("DummyListSize", String.valueOf(dummylist.length) + "___");
+      //  Log.e("DummyListSize", String.valueOf(dummylist.length) + "___");
         adapter = new AdapterHuntList(getApplicationContext(), dummylist);
         wormDotsIndicator.setViewPager(viewPagerHunt);
         viewPagerHunt.setAdapter(adapter);
-        Log.e("level", "******" + level);
+       // Log.e("level", "******" + level);
 
         new Handler().postDelayed(new Runnable() {
             @Override
@@ -178,7 +185,7 @@ public class TreasureHuntActivity extends AppCompatActivity {
         TextView txtLevelOutOf = dialog.findViewById(R.id.txtLevelOutOf);
         ProgressBar progressBar = dialog.findViewById(R.id.progressBar);
 
-        txtLevelOutOf.setText(levelcount + "/10");
+        txtLevelOutOf.setText(levelcount + "/9");
         progressBar.setProgress(levelcount);
         textlevelNo.setText("Level " + levelcount + " ");
         txtNextLevel.setOnClickListener(new View.OnClickListener() {
@@ -189,7 +196,10 @@ public class TreasureHuntActivity extends AppCompatActivity {
         });
 
         dialog.show();
+    }
 
-
+    @Override
+    public void onBackPressed() {
+        this.finish();
     }
 }

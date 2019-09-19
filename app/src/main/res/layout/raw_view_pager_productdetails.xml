@@ -14,6 +14,7 @@
 
 
         <LinearLayout
+            android:id="@+id/liText"
             android:layout_width="match_parent"
             android:layout_marginHorizontal="@dimen/_50sdp"
             android:gravity="center"
@@ -40,6 +41,23 @@
                 android:textAlignment="center"
                 android:textSize="@dimen/_18ssp"
                 android:textStyle="bold" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:visibility="gone"
+            android:id="@+id/liImage"
+            android:layout_width="match_parent"
+            android:layout_marginHorizontal="@dimen/_50sdp"
+            android:gravity="center"
+            android:layout_height="wrap_content">
+
+            <ImageView
+                android:layout_width="match_parent"
+                android:src="@drawable/quote_png"
+                android:id="@+id/image_clue"
+                android:layout_gravity="top"
+                android:layout_height="match_parent" />
+
         </LinearLayout>
     </LinearLayout>
 

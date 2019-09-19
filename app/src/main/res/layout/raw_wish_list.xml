@@ -29,40 +29,42 @@
                 android:orientation="horizontal">
 
                 <de.hdodenhof.circleimageview.CircleImageView
-                    android:layout_width="@dimen/_30sdp"
-                    android:src="@drawable/level_up"
+                    android:layout_width="@dimen/_26sdp"
+                    android:src="@drawable/abhilav"
                     app:civ_border_color="@color/colorPrimary"
                     app:civ_border_overlay="true"
+                    app:civ_circle_background_color="#CACACA"
                     android:id="@+id/imgEmp"
-                    app:civ_border_width="@dimen/_1sdp"
-                    android:layout_height="@dimen/_30sdp" />
+                    app:civ_border_width="0.5dp"
+                    android:layout_height="@dimen/_26sdp" />
 
 
                 <TextView
+                    android:id="@+id/txtEmpName"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Shruti"
-                    android:id="@+id/txtEmpName"
                     android:layout_gravity="center"
                     android:layout_marginHorizontal="@dimen/_4sdp"
-                    android:textSize="@dimen/_12ssp"
-                    android:textStyle="bold"
-                    android:textAllCaps="true"
                     android:letterSpacing="0.08"
-                    android:textColor="@color/colorPrimaryDark" />
+                    android:text="Shruti"
+                    android:textAllCaps="true"
+                    android:textColor="@color/colorPrimaryDark"
+                    android:textSize="@dimen/_11ssp"
+                     />
 
 
             </LinearLayout>
 
             <TextView
-                android:layout_marginTop="@dimen/_4sdp"
+                android:id="@+id/txtEmpWish"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:id="@+id/txtEmpWish"
-                android:textSize="@dimen/_10ssp"
-                android:textColor="#000"
+                android:layout_marginTop="@dimen/_4sdp"
+                android:fontFamily="@font/asensiable"
                 android:lineSpacingExtra="@dimen/_2sdp"
-                android:text="lfkgj k k k k k k k k k k k k k k k k k k k k k k k k k k k k k klhgfhkfgkjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjghkfjh jhgfjkhf fjghkjfghkjfghjk fgh kfjgh fkghkfghkfghkhk"/>
+                android:text="@string/wishD14"
+                android:textColor="#000"
+                android:textSize="@dimen/_14ssp" />
 
         </LinearLayout>
 
